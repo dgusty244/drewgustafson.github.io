@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects | Drew Gustafson</title>
-  <link rel="stylesheet" href="style.css"> <!-- optional, only if you add styles -->
+  <meta charset="UTF-8" />
+  <title>Drew Gustafson | Projects</title>
+  <style>
+    /* Full height flex center */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fefefe;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Content container */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: left;
+    }
+    h1 {
+      margin-top: 0;
+      color: #004080;
+      margin-bottom: 0.5em;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 1.5em;
+    }
+    li {
+      margin-bottom: 0.7em;
+      font-size: 1.1em;
+    }
+    a.project-link {
+      color: #004080;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    a.project-link:hover {
+      border-color: #004080;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #004080;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>My Projects</h1>
-  <p>Here are some of the projects I've worked on.</p>
-
-  <ul>
-    <li>
-      <h2>Metadata-Driven ETL Framework</h2>
-      <p>A scalable framework for ingesting and transforming structured data across multiple sources using Spark and Azure.</p>
-      <a href="ETLFrameworkRedesignAtWtw.html">View Project →</a>
-    </li>
-  </ul>
-
-  <p><a href="index.html">← Back to Home</a></p>
+  <div class="container">
+    <h1>Projects</h1>
+    <ul>
+      <li><a class="project-link" href="ETLProject.html">ETL Framework Redesign at WTW</a></li>
+      <!-- Add more projects here -->
+      <!-- <li><a class="project-link" href="AnotherProject.html">Another Project</a></li> -->
+    </ul>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
 </body>
 </html>
-
