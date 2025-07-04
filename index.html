@@ -5,29 +5,29 @@
   <title>Drew Gustafson | Portfolio</title>
   <style>
     /* Make body full height and use flexbox to center container */
+    /* Base page styles */
     html, body {
-      height: 100%;
       margin: 0;
+      padding: 40px;
       font-family: Arial, sans-serif;
       background: #fefefe;
       color: #222;
-      display: flex;
-      justify-content: center;  /* horizontal center */
-      align-items: center;      /* vertical center */
+      min-height: 100vh;          /* Ensures full page height */
+      box-sizing: border-box;     /* Applies consistent box sizing */
     }
-    /* Container for content */
-   .container {
+    
+    /* Main content container */
+    .container {
       max-width: 900px;
-      width: 100%;
+      margin: 0 auto;              /* Centers horizontally */
       padding: 40px;
-      box-sizing: border-box;
       background: white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
       border-radius: 8px;
-      text-align: left;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       line-height: 1.6;
-      display: block;
-   }
+      text-align: left;
+    }
+
     img {
       display: block;
       width: 300px;
