@@ -5,29 +5,29 @@
   <title>ETL Framework Redesign at WTW | Drew Gustafson</title>
   <style>
     /* Full viewport flex centering */
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fefefe;
-      color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    /* Container to hold content */
-    .container {
-      max-width: 900px;
-      width: 100%;
-      padding: 40px;
-      box-sizing: border-box;
-      background: white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      text-align: left;
-      line-height: 1.6;
-      display: block;
-    }
+    /* Base page styles */
+  html, body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: #fefefe;
+    color: #222;
+    min-height: 100vh;          /* Ensures full page height */
+    box-sizing: border-box;     /* Applies consistent box sizing */
+  }
+  
+  /* Main content container */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;              /* Centers horizontally */
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    text-align: left;
+  }
+
     h1, h2, h3 {
       color: #004080;
       margin-top: 0;
