@@ -16,6 +16,7 @@
         <span class="dropbtn">Projects ▾</span>
         <ul class="dropdown-content">
 
+          <!-- WTW -->
           <li class="dropdown-sub">
             <span>WTW ▸</span>
             <ul class="dropdown-content sub">
@@ -23,6 +24,7 @@
             </ul>
           </li>
 
+          <!-- Insight -->
           <li class="dropdown-sub">
             <span>Insight ▸</span>
             <ul class="dropdown-content sub">
@@ -30,6 +32,7 @@
             </ul>
           </li>
 
+          <!-- USI -->
           <li class="dropdown-sub">
             <span>USI ▸</span>
             <ul class="dropdown-content sub">
@@ -37,6 +40,7 @@
             </ul>
           </li>
 
+          <!-- Student – UW -->
           <li class="dropdown-sub">
             <span>Student – UW ▸</span>
             <ul class="dropdown-content sub">
@@ -82,7 +86,7 @@
         The core design principle was to shift from static, monolithic pipelines to dynamic, metadata-controlled workflows. Instead of building a new pipeline for each request, I designed workflows as collections of modular jobs, where each job is executed by a reusable pipeline. Workflow structure, job dependencies, parameters, and schedules are all stored in metadata tables. This approach dramatically reduced code duplication and allowed teams to scale workflow creation with minimal new development.
       </p>
       <p>
-        Example: When a new source, a file share on the company network, needed integration, I only created a new ingestion pipeline for that source. All transformation and warehouse loading logic reused existing pipelines through parameter configuration.
+        Example: When a new source—a file share on the company network—needed integration, I only created a new ingestion pipeline for that source. All transformation and warehouse loading logic reused existing pipelines through parameter configuration.
       </p>
     </div>
 
@@ -96,7 +100,7 @@
     <div class="section">
       <h2>Job Dependency Management with DAG Logic</h2>
       <p>
-        The legacy system scheduled jobs using hardcoded job order numbers. I replaced this with a directed acyclic graph (DAG) dependency system using a <code>dependsOnJobId</code> column in metadata.
+        The legacy system scheduled jobs using hard-coded job order numbers. I replaced this with a directed acyclic graph (DAG) dependency system using a <code>dependsOnJobId</code> column in metadata.
       </p>
       <p>
         A recursive CTE in SQL unrolled this dependency tree into a clean one-row-per-dependency format. This view is used to:
@@ -113,34 +117,30 @@
     <div class="section">
       <h2>Notebook & Pipeline Standardization</h2>
       <p>
-        Previously, developers created a new notebook for each new request, even if the logic was repetitive. I introduced a parameter-driven notebook template system, where common transformations could be reused by simply passing different parameters. Similarly, I introduced two reusable ADF pipelines for data warehouse loads:
+        Previously, developers created a new notebook for each new request, even if the logic was repetitive. I introduced a parameter-driven notebook template system, where common transformations could be reused by simply passing different parameters. Similarly, I introduced two reusable ADF pipelines for data-warehouse loads:
       </p>
       <ul>
         <li><strong>PL_Warehouse_Overwrite:</strong> truncates and inserts into the target DW table.</li>
-        <li><strong>PL_Warehouse_Merge:</strong> stages data into an ETL table, then dynamically builds and executes a SQL merge statement.</li>
+        <li><strong>PL_Warehouse_Merge:</strong> stages data into an ETL table, then dynamically builds and executes a SQL MERGE statement.</li>
       </ul>
       <p>
-        This change also transitioned DW loading from Databricks JDBC/ODBC notebooks to native ADF copy activities, improving performance and scalability, especially for large datasets that had previously failed due to memory constraints.
+        This change also transitioned DW loading from Databricks JDBC/ODBC notebooks to native ADF copy activities, improving performance and scalability—especially for large datasets that had previously failed due to memory constraints.
       </p>
     </div>
 
     <div class="section">
       <h2>Terminology & Documentation Clarity</h2>
-      <p>
-        To reduce confusion and improve adoption, I introduced a clear and consistent vocabulary:
-      </p>
+      <p>To reduce confusion and improve adoption, I introduced a clear and consistent vocabulary:</p>
       <ul>
         <li><strong>Workflows:</strong> The schedulable unit of execution, composed of jobs.</li>
         <li><strong>Jobs:</strong> Tasks within a workflow, run by pipelines.</li>
-        <li><strong>Pipelines:</strong> Reusable components for ingesting, transforming, or loading data. No longer an isolated unit to describe one end to end data process.</li>
-        <li><strong>Notebooks:</strong> A tool for pipeline implementation, not the orchestration unit. No more confusion between Databricks “notebooks” and the orchestration unit “notebook.”</li>
+        <li><strong>Pipelines:</strong> Reusable components for ingesting, transforming, or loading data.</li>
+        <li><strong>Notebooks:</strong> A tool for pipeline implementation, not the orchestration unit.</li>
       </ul>
       <p>
-        To support long-term sustainability, I documented the entire framework internally, with detailed reference pages for every database object, notebook, and pipeline. I also onboarded teammates and led training, enabling the framework to scale quickly across use cases.
+        To support long-term sustainability, I documented the entire framework internally, with detailed reference pages for every database object, notebook, and pipeline. I also onboarded teammates and led training, enabling the framework to scale quickly across use-cases.
       </p>
     </div>
-
-    <a href="../../index.html" class="back-link">← Back to Home</a>
   </div>
 </body>
 </html>
