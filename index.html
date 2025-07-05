@@ -3,77 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <title>Drew Gustafson | Portfolio</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 40px;
-      font-family: Arial, sans-serif;
-      background: #fefefe;
-      color: #222;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    /* Center profile picture */
-    .profile-pic {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 300px;
-      max-width: 100%;
-      border-radius: 50%;
-    }
-
-    /* Center the main title */
-    h1.title {
-      color: #004080;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    h1, h2, h3 {
-      color: #004080;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    p, li {
-      font-size: 1.05em;
-    }
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: #004080;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: 2px solid #004080;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    a:hover {
-      background-color: #004080;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
+  <!-- Optional: include nav bar here -->
+  <!-- <nav class="topnav"> ... </nav> -->
+<!-- ─────────── TOP NAVIGATION BAR ─────────── -->
+<nav class="topnav">
+  <ul class="nav-root">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <span class="dropbtn">Projects ▾</span>
+      <ul class="dropdown-content">
+
+        <!-- WTW -->
+        <li class="dropdown-sub">
+          <span>WTW ▸</span>
+          <ul class="dropdown-content sub">
+            <li><a href="projects/wtw/EtlFramework.html">ETL Framework</a></li>
+          </ul>
+        </li>
+
+        <!-- Insight -->
+        <li class="dropdown-sub">
+          <span>Insight ▸</span>
+          <ul class="dropdown-content sub">
+            <li><a href="projects/insight/placeholder.html">Placeholder</a></li>
+          </ul>
+        </li>
+
+        <!-- USI (remove block if not needed) -->
+        <li class="dropdown-sub">
+          <span>USI ▸</span>
+          <ul class="dropdown-content sub">
+            <li><a href="projects/usi/placeholder.html">Placeholder</a></li>
+          </ul>
+        </li>
+
+        <!-- Student – UW -->
+        <li class="dropdown-sub">
+          <span>Student – UW ▸</span>
+          <ul class="dropdown-content sub">
+            <li><a href="projects/student-uw/placeholder.html">Placeholder</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <li><a href="technical-skills.html">Technical Skills</a></li>
+  </ul>
+</nav>
   <div class="container">
     <img src="images/LinkedinPfp.jpg" alt="My Profile Picture" class="profile-pic" />
     <h1 class="title">Drew Gustafson | Senior Data Engineer</h1>
@@ -130,9 +112,6 @@
       <li>Azure: Data Factory, Databricks, Synapse, Blob Storage, Key Vault, DevOps, Event Hub, Logic Apps</li>
       <li>Other: Data Modeling, Lakehouse Architecture, Power BI, Tableau, ML Support, CI/CD, Git</li>
     </ul>
-
-    <p>Please see my projects</p>
-    <a href="projects.html">Projects</a>
   </div>
 </body>
 </html>
