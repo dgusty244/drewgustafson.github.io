@@ -137,3 +137,11 @@ a:hover {
   background: #004080;
   color: #ffffff;
 }
+
+/* ───────── RESPONSIVE IMAGES (NON-HEADSHOT) ───────── */
+.container img:not(.profile-pic) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
