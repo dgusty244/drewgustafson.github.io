@@ -2,7 +2,7 @@
 html,
 body {
   margin: 0;
-  padding: 40px;           /* top/bottom spacing around whole page */
+  padding: 40px;
   font-family: Arial, sans-serif;
   background: #fefefe;
   color: #222;
@@ -25,7 +25,7 @@ body {
 /* ───────── NAVIGATION BAR ────────────────── */
 .topnav {
   background: #004080;
-  margin: -40px -40px 40px -40px;  /* stretch edge-to-edge, then restore body padding below */
+  margin: -40px -40px 40px -40px;
   padding: 0;
 }
 
@@ -36,23 +36,24 @@ body {
   display: flex;
 }
 
-.nav-root > li {
-  position: relative;
-}
+.nav-root > li { position: relative; }
 
-.nav-root a {
+.nav-root a,
+.nav-root span {
   display: block;
   color: #ffffff;
   padding: 14px 20px;
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.nav-root a:hover {
+.nav-root a:hover,
+.nav-root span:hover {
   background: #003060;
 }
 
-/* Dropdown */
+/* ───── Primary dropdown (Projects) ───── */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -71,9 +72,21 @@ body {
   white-space: nowrap;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown:hover > .dropdown-content { display: block; }
+
+/* ───── Second-level dropdown (slide-out) ───── */
+.dropdown-sub { position: relative; }
+
+.dropdown-content.sub {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: #004080;
+  min-width: 180px;
 }
+
+.dropdown-sub:hover > .dropdown-content { display: block; }
 
 /* ───────── PROFILE & HEADINGS ────────────── */
 .profile-pic {
