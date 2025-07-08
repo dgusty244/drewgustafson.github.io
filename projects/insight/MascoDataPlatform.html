@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Azure Data Platform POC for Masco Corporation | Drew Gustafson</title>
+  <!-- two levels up to reach /css/main.css -->
+  <link rel="stylesheet" href="../../css/main.css" />
+</head>
+
+<body>
+  <!-- ─────────── TOP NAVIGATION BAR ─────────── -->
+  <nav class="topnav">
+    <ul class="nav-root">
+      <li><a href="../../index.html">Home</a></li>
+
+      <li class="dropdown">
+        <span class="dropbtn">Projects ▾</span>
+        <ul class="dropdown-content">
+
+          <!-- WTW -->
+          <li class="dropdown-sub">
+            <span>WTW ▸</span>
+            <ul class="dropdown-content sub">
+              <li><a href="../../projects/wtw/EtlFramework.html">ETL Framework</a></li>
+            </ul>
+          </li>
+
+          <!-- Insight -->
+          <li class="dropdown-sub">
+            <span>Insight ▸</span>
+            <ul class="dropdown-content sub">
+              <li><a href="../../projects/insight/MascoDataPlatform.html">Masco Data Platform POC</a></li>
+            </ul>
+          </li>
+
+          <!-- USI -->
+          <li class="dropdown-sub">
+            <span>USI ▸</span>
+            <ul class="dropdown-content sub">
+              <li><a href="../../projects/usi/placeholder.html">Placeholder</a></li>
+            </ul>
+          </li>
+
+          <!-- Student – UW -->
+          <li class="dropdown-sub">
+            <span>Student – UW ▸</span>
+            <ul class="dropdown-content sub">
+              <li><a href="../../projects/student-uw/placeholder.html">Placeholder</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+
+      <li><a href="../../technical-skills.html">Technical Skills</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─────────── PAGE CONTENT ─────────── -->
+  <div class="container">
+    <h1>Azure Data Platform Proof of Concept for Masco Corporation</h1>
+
+    <div class="section">
+      <p>
+        As the sole data-engineering consultant on this greenfield engagement, I delivered an
+        end-to-end Azure data platform proof of concept (POC) that showcased ingestion,
+        transformation, modeling, and visualization capabilities for Masco Corporation.
+      </p>
+    </div>
+
+    <!-- Infrastructure Provisioning -->
+    <div class="section">
+      <h2>Infrastructure Provisioning</h2>
+      <p>
+        I customized and executed a Terraform script—my first client-facing IaC deployment—to stand
+        up the core Azure resources:
+      </p>
+      <ul>
+        <li>Azure Data Factory</li>
+        <li>Azure Databricks</li>
+        <li>Azure Storage Account</li>
+        <li>Azure Key Vault</li>
+      </ul>
+      <p>
+        Key responsibilities included naming conventions, resource grouping, and identity
+        configuration (service principals, app registrations) to ensure best-practice security and
+        manageability.
+      </p>
+    </div>
+
+    <!-- Data Modeling -->
+    <div class="section">
+      <h2>Data Modeling from Raw CSVs</h2>
+      <p>
+        The client supplied five large CSV files with identical schemas spanning different
+        date ranges. My objective was to demonstrate a
+        <strong>Kimball-style dimensional model</strong>:
+      </p>
+      <ul>
+        <li>A <strong>sales fact table</strong></li>
+        <li>Dimension tables for products, customers, locations, and subsidiaries</li>
+      </ul>
+      <p>
+        I performed exploratory analysis to determine grain, resolve data inconsistencies
+        (“Seattle, WA” vs “Seattle, Washington”), and validated assumptions through iterative
+        sessions with business stakeholders.
+      </p>
+    </div>
+
+    <!-- External Data Integration -->
+    <div class="section">
+      <h2>Enhancements &amp; External Data Integration</h2>
+      <p>
+        Finishing core scope ahead of schedule, I integrated <em>daily copper prices</em> via a
+        public API—critical for a manufacturer reliant on copper. A Databricks notebook ingested the
+        feed into a Delta Lake table, enabling time-series joins with sales data and richer insight
+        in downstream reports.
+      </p>
+    </div>
+
+    <!-- Power BI Dashboard -->
+    <div class="section">
+      <h2>Power BI Demo Dashboard</h2>
+      <p>
+        I built a demonstration Power BI report featuring:
+      </p>
+      <ul>
+        <li>Sales trends over time</li>
+        <li>Sales by hierarchical product classification</li>
+        <li>Performance comparisons between child companies</li>
+      </ul>
+      <p>
+        The dashboard served to illustrate platform potential; Masco stakeholders were extremely
+        pleased with the technical execution and business value of the POC.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
