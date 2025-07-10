@@ -1,17 +1,12 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
-  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
-
-  {% include nav.html %}  <!-- ✅ This includes your navbar everywhere -->
-
-  <main>
-    {{ content }}          <!-- ✅ This is the main content of each page -->
-  </main>
-
+  {% include nav.html %}
+  {{ content }}
 </body>
 </html>
