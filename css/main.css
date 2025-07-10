@@ -1,4 +1,10 @@
 /* ───────── GLOBAL BASE ───────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -7,7 +13,6 @@ body {
   background: #fefefe;
   color: #222;
   min-height: 100vh;
-  box-sizing: border-box;
 }
 
 /* ───────── LAYOUT CONTAINER ──────────────── */
@@ -36,7 +41,9 @@ body {
   display: flex;
 }
 
-.nav-root > li { position: relative; }
+.nav-root > li {
+  position: relative;
+}
 
 .nav-root a,
 .nav-root span {
@@ -72,10 +79,14 @@ body {
   white-space: nowrap;
 }
 
-.dropdown:hover > .dropdown-content { display: block; }
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
 
 /* ───── Second-level dropdown (slide-out) ───── */
-.dropdown-sub { position: relative; }
+.dropdown-sub {
+  position: relative;
+}
 
 .dropdown-content.sub {
   display: none;
@@ -86,7 +97,9 @@ body {
   min-width: 180px;
 }
 
-.dropdown-sub:hover > .dropdown-content { display: block; }
+.dropdown-sub:hover > .dropdown-content {
+  display: block;
+}
 
 /* ───────── PROFILE & HEADINGS ────────────── */
 .profile-pic {
