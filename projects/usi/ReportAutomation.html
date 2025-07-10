@@ -24,13 +24,19 @@ title: Report Automation at USI | Drew Gustafson
     Once I realized automating the Production Analytics report was feasible, I went for it. I knew every Excel transformation could be done in PowerQuery, and that learning the tool would translate well to Python, SQL, R, or other tools. PowerQuery was accessible in my current role, so it was my tool of choice.
   </p>
 
-  <p>
-    Most transformations were straightforward—conditional columns (e.g., if revenue ≥ x then “High Revenue” else “Low Revenue”) or simple filters (e.g., keeping only active plans). These saved time but weren’t the most impactful part. The real game-changer was merging queries, which replaced inefficient manual VLOOKUPs.
-  </p>
+ <p>
+  Most transformations were straightforward—conditional columns (e.g., if revenue ≥ x then “High Revenue” else “Low Revenue”) or simple filters (e.g., keeping only active plans). These saved time but weren’t the most impactful part. The real game-changer was merging queries, which replaced inefficient manual VLOOKUPs.
+ </p>
 
-  <p>
-    Merging queries is very similar to SQL JOINs—PowerQuery even lets you select join types and matching columns just like SQL. Learning this cemented my understanding of data merging concepts across tools.
-  </p>
+  <div style="text-align:center; margin: 30px 0;">
+   <img src="{{ site.baseurl }}/images/merge.png" alt="PowerQuery Merge Dialogue Box" style="max-width: 100%; height: auto;" />
+   <p><em>Exhibit 1: PowerQuery Merge Dialogue Box</em></p>
+  </div>
+
+<p>
+  Merging queries is very similar to SQL JOINs—PowerQuery even lets you select join types and matching columns just like SQL. Learning this cemented my understanding of data merging concepts across tools.
+</p>
+
 
   <p>
     My monthly process went from manually slicing and combining seven spreadsheets to simply downloading reports and updating the file path in PowerQuery. The organized queries look much cleaner than my old dual-monitor chaos juggling multiple spreadsheets. This automation saved me several workdays per month, letting me focus on other priorities.
@@ -39,9 +45,8 @@ title: Report Automation at USI | Drew Gustafson
   <p>
     Most importantly, I learned that any repeated analysis can be automated—and I’m confident in the skills to do so.
   </p>
-
-  <div style="text-align:center; margin: 30px 0;">
-    <img src="{{ site.baseurl }}/images/merge.png" alt="PowerQuery Merge Dialogue Box" style="max-width: 100%; height: auto; margin-bottom: 15px;" />
+  
+    <div style="text-align:center; margin: 30px 0;">
 
     <p><em>Exhibit 1: PowerQuery Merge Dialogue Box</em></p>
 
