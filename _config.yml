@@ -1,9 +1,2 @@
-drewgustafson.github.io/
-├── _config.yml
-├── _includes/
-│   └── nav.html
-├── _layouts/
-│   └── default.html
-├── index.html
-├── css/
-│   └── main.css
+title: Drew Gustafson Portfolio
+description: Personal portfolio site built with GitHub Pages and Jekyll
