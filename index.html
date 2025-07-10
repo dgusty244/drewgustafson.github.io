@@ -1,119 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Drew Gustafson | Portfolio</title>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+---
+layout: default
+title: Drew Gustafson | Portfolio
+---
 
-<body>
-  <!-- ─────────── TOP NAVIGATION BAR ─────────── -->
-  <nav class="topnav">
-    <ul class="nav-root">
-      <li><a href="index.html">Home</a></li>
+<div class="container">
+  <img src="images/LinkedinPfp.jpg" alt="My Profile Picture" class="profile-pic" />
+  <h1 class="title">Drew Gustafson | Senior Data Engineer</h1>
 
-      <!-- Projects (level-1) -->
-      <li class="dropdown">
-        <a href="#" class="dropbtn">Projects ▾</a>
-        <ul class="dropdown-content">
+  <a href="documents/DrewGustafsonOfficialResume.pdf" download
+     style="display:inline-block;margin-top:10px;margin-bottom:30px;padding:8px 16px;background:#004080;color:#fff;text-decoration:none;border-radius:4px;">
+    ⬇ Download Resume (PDF)
+  </a>
 
-          <!-- WTW (level-2) -->
-          <li class="dropdown-sub">
-            <a href="#" class="subbtn">WTW ▸</a>
-            <ul class="dropdown-content sub">
-              <li><a href="projects/wtw/EtlFramework.html">ETL Framework</a></li>
-            </ul>
-          </li>
+  <p><strong>Location:</strong> Seattle, WA<br>
+     <strong>Email:</strong> drewgustafson12@gmail.com<br>
+     <strong>Phone:</strong> (206) 849-2709<br>
+     <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dtg3" target="_blank">linkedin.com/in/dtg3</a>
+  </p>
 
-          <!-- Insight -->
-          <li class="dropdown-sub">
-            <a href="#" class="subbtn">Insight ▸</a>
-            <ul class="dropdown-content sub">
-              <li><a href="projects/insight/MascoDataPlatform.html">Masco Data Platform POC</a></li>
-            </ul>
-          </li>
+  <h3>Professional Summary</h3>
+  <p>Senior Data Engineer with 4+ years of experience designing metadata-driven ETL systems and building data warehouses using Azure. Led the design of an ETL framework at WTW and delivered scalable data solutions at Insight. Skilled in integrating disparate data sources, optimizing pipeline performance, and developing robust systems that reduce development effort for new projects.</p>
 
-          <!-- USI -->
-          <li class="dropdown-sub">
-            <a href="#" class="subbtn">USI ▸</a>
-            <ul class="dropdown-content sub">
-              <li><a href="projects/usi/placeholder.html">Placeholder</a></li>
-            </ul>
-          </li>
+  <h3>Work Experience</h3>
 
-          <!-- Student – UW -->
-          <li class="dropdown-sub">
-            <a href="#" class="subbtn">Student – UW ▸</a>
-            <ul class="dropdown-content sub">
-              <li><a href="projects/student-uw/placeholder.html">Placeholder</a></li>
-            </ul>
-          </li>
+  <p><strong>Willis Towers Watson | Data Engineer | Remote | June 2023 – Present</strong></p>
+  <ul>
+    <li>Designed and implemented a metadata-driven ETL framework in Azure, significantly reducing code redundancy and minimizing the number of ADF pipelines and Databricks notebooks. Supported multiple data sources including SFTP, Delta Sharing, and Event Hub. Documented framework and trained teammates on its usage.</li>
+    <li>Designed the framework with scalability in mind, allowing future integration of sources such as high-volume OLTP databases on SQL Server, Salesforce, or Oracle with minimal code changes.</li>
+    <li>Replaced a legacy fixed-sequence scheduling system, which relied on manually assigned job order numbers, with a metadata-driven DAG architecture using <code>dependsOnJobKey</code> for dynamic, dependency-aware orchestration.</li>
+    <li>Developed dynamic SFTP scheduling that detects file arrivals and queues workflows, eliminating fixed scheduling and improving reporting SLAs.</li>
+    <li>Optimized incremental loads by fixing boundary logic bugs and switching SFTP ingestion from fixed look-back periods to watermark-based incremental loads using ETL-derived timestamps.</li>
+    <li>Increased pipeline resilience by developing Python UDFs to handle CSV irregularities, including embedded commas, line breaks, inconsistent delimiters, and schema drift.</li>
+    <li>Built a pipeline monitoring tool using Python and Azure Logic Apps that analyzes logs to report workflow status, row counts, and last update times, enabling proactive detection of silent failures and stale pipelines.</li>
+  </ul>
 
-        </ul>
-      </li>
+  <p><strong>Insight Enterprises (Clients: Microsoft, Gilead, Microchip, TQL) | Remote | April 2021 – May 2023</strong></p>
+  <ul>
+    <li>Built Azure-based data warehouses by ingesting millions of rows from sources such as SQL, Salesforce, CSVs, APIs, and web scraping. Transformed data through a medallion data-lake architecture using ADF, SQL, and PySpark.</li>
+    <li>Designed and delivered a full-stack data platform, modeling denormalized flat files into a normalized, Kimball-style star-schema warehouse, and developed Power BI reports tailored to client needs.</li>
+    <li>Engineered parameterized, metadata-driven PySpark notebooks to refresh hundreds of cloud tables.</li>
+    <li>Led a Synapse migration project, implemented scheduling, job configurations, and incremental loads via ADF and stored procedures on the dedicated SQL pool.</li>
+    <li>Deployed Azure infrastructure for a greenfield data platform with Terraform; leveraged and maintained existing CI/CD pipelines for deployment automation.</li>
+    <li>Supported ML models by building data pipelines for product recommendations and defect detection using Databricks and CNNs, including a patent-pending metadata-driven framework.</li>
+    <li>Built Python-based validation tools for row-level table diffs and duplicate key detection across environments.</li>
+  </ul>
 
-      <li><a href="technical-skills.html">Technical Skills</a></li>
-    </ul>
-  </nav>
+  <p><strong>USI Insurance Services | Operations Data Analyst | Remote | March 2020 – April 2021</strong></p>
+  <ul>
+    <li>Automated reports and data-prep tasks using PowerQuery and Excel, sparking transition into data engineering.</li>
+  </ul>
 
-  <!-- ─────────── MAIN CONTENT ─────────── -->
-  <div class="container">
-    <img src="images/LinkedinPfp.jpg" alt="My Profile Picture" class="profile-pic" />
-    <h1 class="title">Drew Gustafson | Senior Data Engineer</h1>
+  <h3>Education</h3>
+  <p><strong>University of Washington, Michael G. Foster School of Business | Seattle, WA | September 2016 – June 2021</strong></p>
+  <p>M.S. Information Systems (GPA 3.87), B.A. Business Administration – Info Systems & Supply Chain (GPA 3.62)</p>
 
-    <a href="documents/DrewGustafsonOfficialResume.pdf" download
-       style="display:inline-block;margin-top:10px;margin-bottom:30px;padding:8px 16px;background:#004080;color:#fff;text-decoration:none;border-radius:4px;">
-      ⬇ Download Resume (PDF)
-    </a>
-
-    <p><strong>Location:</strong> Seattle, WA<br>
-       <strong>Email:</strong> drewgustafson12@gmail.com<br>
-       <strong>Phone:</strong> (206) 849-2709<br>
-       <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dtg3" target="_blank">linkedin.com/in/dtg3</a>
-    </p>
-
-    <h3>Professional Summary</h3>
-    <p>Senior Data Engineer with 4+ years of experience designing metadata-driven ETL systems and building data warehouses using Azure. Led the design of an ETL framework at WTW and delivered scalable data solutions at Insight. Skilled in integrating disparate data sources, optimizing pipeline performance, and developing robust systems that reduce development effort for new projects.</p>
-
-    <h3>Work Experience</h3>
-
-    <p><strong>Willis Towers Watson | Data Engineer | Remote | June 2023 – Present</strong></p>
-    <ul>
-      <li>Designed and implemented a metadata-driven ETL framework in Azure, significantly reducing code redundancy and minimizing the number of ADF pipelines and Databricks notebooks. Supported multiple data sources including SFTP, Delta Sharing, and Event Hub. Documented framework and trained teammates on its usage.</li>
-      <li>Designed the framework with scalability in mind, allowing future integration of sources such as high-volume OLTP databases on SQL Server, Salesforce, or Oracle with minimal code changes.</li>
-      <li>Replaced a legacy fixed-sequence scheduling system, which relied on manually assigned job order numbers, with a metadata-driven DAG architecture using <code>dependsOnJobKey</code> for dynamic, dependency-aware orchestration.</li>
-      <li>Developed dynamic SFTP scheduling that detects file arrivals and queues workflows, eliminating fixed scheduling and improving reporting SLAs.</li>
-      <li>Optimized incremental loads by fixing boundary logic bugs and switching SFTP ingestion from fixed look-back periods to watermark-based incremental loads using ETL-derived timestamps.</li>
-      <li>Increased pipeline resilience by developing Python UDFs to handle CSV irregularities, including embedded commas, line breaks, inconsistent delimiters, and schema drift.</li>
-      <li>Built a pipeline monitoring tool using Python and Azure Logic Apps that analyzes logs to report workflow status, row counts, and last update times, enabling proactive detection of silent failures and stale pipelines.</li>
-    </ul>
-
-    <p><strong>Insight Enterprises (Clients: Microsoft, Gilead, Microchip, TQL) | Remote | April 2021 – May 2023</strong></p>
-    <ul>
-      <li>Built Azure-based data warehouses by ingesting millions of rows from sources such as SQL, Salesforce, CSVs, APIs, and web scraping. Transformed data through a medallion data-lake architecture using ADF, SQL, and PySpark.</li>
-      <li>Designed and delivered a full-stack data platform, modeling denormalized flat files into a normalized, Kimball-style star-schema warehouse, and developed Power BI reports tailored to client needs.</li>
-      <li>Engineered parameterized, metadata-driven PySpark notebooks to refresh hundreds of cloud tables.</li>
-      <li>Led a Synapse migration project, implemented scheduling, job configurations, and incremental loads via ADF and stored procedures on the dedicated SQL pool.</li>
-      <li>Deployed Azure infrastructure for a greenfield data platform with Terraform; leveraged and maintained existing CI/CD pipelines for deployment automation.</li>
-      <li>Supported ML models by building data pipelines for product recommendations and defect detection using Databricks and CNNs, including a patent-pending metadata-driven framework.</li>
-      <li>Built Python-based validation tools for row-level table diffs and duplicate key detection across environments.</li>
-    </ul>
-
-    <p><strong>USI Insurance Services | Operations Data Analyst | Remote | March 2020 – April 2021</strong></p>
-    <ul>
-      <li>Automated reports and data-prep tasks using PowerQuery and Excel, sparking transition into data engineering.</li>
-    </ul>
-
-    <h3>Education</h3>
-    <p><strong>University of Washington, Michael G. Foster School of Business | Seattle, WA | September 2016 – June 2021</strong></p>
-    <p>M.S. Information Systems (GPA 3.87), B.A. Business Administration – Info Systems & Supply Chain (GPA 3.62)</p>
-
-    <h3>Technical Skills</h3>
-    <ul>
-      <li>Languages: Python, PySpark, Pandas, SQL (Recursive CTE, MERGE, DAG, Window Functions), Terraform</li>
-      <li>Azure: Data Factory, Databricks, Synapse, Blob Storage, Key Vault, DevOps, Event Hub, Logic Apps</li>
-      <li>Other: Data Modeling, Lakehouse Architecture, Power BI, Tableau, ML Support, CI/CD, Git</li>
-    </ul>
-  </div>
-</body>
-</html>
+  <h3>Technical Skills</h3>
+  <ul>
+    <li>Languages: Python, PySpark, Pandas, SQL (Recursive CTE, MERGE, DAG, Window Functions), Terraform</li>
+    <li>Azure: Data Factory, Databricks, Synapse, Blob Storage, Key Vault, DevOps, Event Hub, Logic Apps</li>
+    <li>Other: Data Modeling, Lakehouse Architecture, Power BI, Tableau, ML Support, CI/CD, Git</li>
+  </ul>
+</div>
