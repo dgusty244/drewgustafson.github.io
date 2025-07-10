@@ -1,2 +1,10 @@
 title: Drew Gustafson Portfolio
 description: Personal portfolio site built with GitHub Pages and Jekyll
+
+# Add your actual GitHub repo name here (the part after your username)
+baseurl: "/your-repo-name"  # Example: "/portfolio-site"
+url: "https://your-github-username.github.io"  # Replace with your GitHub Pages URL
+
+# Optional: enable GitHub Pages compatibility
+markdown: kramdown
+theme: null
