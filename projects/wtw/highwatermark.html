@@ -7,7 +7,7 @@ title: Redesigning High Watermark Logic at WTW | Drew Gustafson
   <article class="project-article">
     <h1>Redesigning High Watermark Logic at WTW</h1>
 
-    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating dozens of tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time.</p>
+    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating dozens of tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time. Notably, there was no table-level control of high watermarks beyond the bronze zone, and pre-advancing of watermarks occurred only for zones beyond bronze. The source-to-bronze zone processing was actually implemented correctly.</p>
 
     <p>At the beginning of each run, the pipeline would set the high watermark to the current timestamp, then look back a fixed window, typically three hours, using that value in its filters. However, if a job failed, the watermark had already advanced by the next run and the data might be missed. To compensate, the team ran frequent manual and automated backfills, including a regular three-month backfill every Sunday.</p>
 
@@ -28,7 +28,7 @@ WHERE EXISTS (
 
     <h2>Redesigning the Watermark Strategy</h2>
 
-    <p>When I was given the choice to use the existing framework or start fresh, I chose a hybrid approach. I reused parts of the existing pipeline but replaced the watermark logic entirely.</p>
+    <p>This redesign was specifically for new projects; reworking the in-place incremental loads was not a priority, especially since the Azure data warehouse wasn't used for live reporting yet. I initially chose a hybrid approach to the existing framework, then eventually built an entirely new orchestration framework — <a href="https://dgusty244.github.io/drewgustafson.github.io/projects/wtw/EtlFramework.html" target="_blank" rel="noopener noreferrer">read more about it here</a>.</p>
 
     <div class="diagram-container" style="text-align: center; margin: 2rem 0;">
       <img src="{{ site.baseurl }}/images/watermark-redesign-architecture.png" alt="High Watermark Logic Redesign Architecture" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
