@@ -5,4 +5,5 @@ description: Personal portfolio site built with GitHub Pages and Jekyll
 url: "https://dgusty244.github.io"
 
 markdown: kramdown
+highlighter: rouge
 theme: null
