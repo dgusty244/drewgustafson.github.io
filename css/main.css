@@ -10,8 +10,8 @@ body {
   margin: 0;
   padding: 40px;
   font-family: Arial, sans-serif;
-  background: #121212; /* dark base */
-  color: #e0e0e0; /* light text */
+  background: #121212;
+  color: #e0e0e0;
   min-height: 100vh;
 }
 
@@ -20,7 +20,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px;
-  background: #1e1e1e; /* darker container */
+  background: #1e1e1e;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   line-height: 1.6;
@@ -45,163 +45,32 @@ body {
   position: relative;
 }
 
-/* Base styling for all nav links and spans */
+/* Equal-width nav buttons */
 .nav-root a,
-.nav-root span {
-  display: block;
-  color: #ffffff;
-  padding: 14px 20px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  min-width: 180px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-/* Hover effect for base nav links and spans */
-.nav-root a:hover,
-.nav-root span:hover {
-  background: #002244;
-}
-
-/* Dropdown button styling for .dropbtn and .subbtn */
+.nav-root span,
 .dropbtn,
-.subbtn {
+.subbtn,
+.dropdown-content li a {
+  display: block;
   color: #ffffff;
   padding: 14px 20px;
-  display: block;
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
-  min-width: 180px;
+  width: 260px; /* ← Match the widest label */
   text-align: center;
+  background-color: transparent;
   box-sizing: border-box;
 }
 
-/* Hover effect for dropdown buttons */
+/* Hover effects */
+.nav-root a:hover,
+.nav-root span:hover,
 .dropbtn:hover,
-.subbtn:hover {
+.subbtn:hover,
+.dropdown-content li a:hover {
   background: #002244;
 }
 
-/* ───── Primary dropdown (Projects) ───── */
+/* Dropdown */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: #003366;
-  min-width: 180px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 999;
-}
-
-.dropdown-content li a {
-  padding: 10px 16px;
-  white-space: nowrap;
-  min-width: 180px;
-  text-align: center;
-}
-
-/* Show primary dropdown on hover */
-.dropdown:hover > .dropdown-content {
-  display: block;
-}
-
-/* ───── Second-level dropdown (slide-out) ───── */
-.dropdown-sub {
-  position: relative;
-}
-
-.dropdown-content.sub {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background: #003366;
-  min-width: 180px;
-}
-
-/* Show second-level dropdown on hover */
-.dropdown-sub:hover > .dropdown-content {
-  display: block;
-}
-
-/* ───────── PROFILE & HEADINGS ────────────── */
-.profile-pic {
-  display: block;
-  margin: 0 auto 20px auto;
-  width: 300px;
-  max-width: 100%;
-  border-radius: 50%;
-}
-
-h1.title {
-  color: #66aaff;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h1,
-h2,
-h3 {
-  color: #66aaff;
-  margin-bottom: 10px;
-}
-
-/* ───────── TYPOGRAPHY & LISTS ────────────── */
-ul {
-  padding-left: 20px;
-  margin: 0 0 20px 0;
-}
-
-p,
-li {
-  font-size: 1.05em;
-}
-
-/* ───────── LINKS & BUTTONS ───────────────── */
-
-/* Button-style links only if class="btn" */
-a.btn {
-  display: inline-block;
-  color: #66aaff;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 2px solid #66aaff;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-a.btn:hover {
-  background: #66aaff;
-  color: #1e1e1e;
-}
-
-/* Normal inline links (no button style) */
-a:not(.btn) {
-  color: #66aaff;
-  font-weight: normal;
-  text-decoration: underline;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-a:not(.btn):hover {
-  color: #aaccee;
-  text-decoration: underline;
-}
-
-/* ───────── RESPONSIVE IMAGES (NON-HEADSHOT) ───────── */
-.container img:not(.profile-pic) {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
