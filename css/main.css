@@ -41,54 +41,52 @@ body {
   display: flex;
 }
 
-/* Make all direct nav items flex containers to share equal width */
 .nav-root > li {
   position: relative;
-  flex: 1 1 0;
-  text-align: center;
 }
 
-/* All links and spans inside nav-root get full width and equal min-width */
-.nav-root a,
-.nav-root span {
+/* ───────── TOP LEVEL NAV LINKS ───────────── */
+/* top-level links (direct children of .nav-root) */
+.nav-root > li > a,
+.nav-root > li > span,
+.dropbtn {
   display: block;
   color: #ffffff;
   padding: 14px 20px;
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
-  min-width: 180px;
+  min-width: 180px;       /* equal width */
+  text-align: center;     /* centered text */
   box-sizing: border-box;
-  width: 100%;
 }
 
-/* Hover effect for nav links and spans */
-.nav-root a:hover,
-.nav-root span:hover {
+/* Hover effect for top-level links */
+.nav-root > li > a:hover,
+.nav-root > li > span:hover,
+.dropbtn:hover {
   background: #002244;
 }
 
-/* Dropdown button styling for .dropbtn and .subbtn */
-.dropbtn,
+/* ───────── SUBMENU LINKS AND TOGGLES ───────── */
+/* submenu toggle buttons (level 2 dropdown triggers) */
 .subbtn {
+  display: block;
   color: #ffffff;
   padding: 14px 20px;
-  display: block;
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
-  min-width: 180px;
+  min-width: 180px;       /* equal width */
+  text-align: left;       /* left aligned text */
   box-sizing: border-box;
-  width: 100%;
 }
 
-/* Hover effect for dropdown buttons */
-.dropbtn:hover,
 .subbtn:hover {
   background: #002244;
 }
 
-/* ───── Primary dropdown (Projects) ───── */
+/* primary dropdown container */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -102,15 +100,13 @@ body {
   z-index: 999;
 }
 
-/* Dropdown links styling */
+/* submenu links inside dropdown */
 .dropdown-content li a {
   padding: 10px 16px;
   white-space: nowrap;
-  min-width: 180px;
-  text-align: center;
-  display: block;
+  min-width: 180px;       /* equal width */
+  text-align: left;       /* left aligned text */
   box-sizing: border-box;
-  width: 100%;
 }
 
 /* Show primary dropdown on hover */
@@ -118,7 +114,7 @@ body {
   display: block;
 }
 
-/* ───── Second-level dropdown (slide-out) ───── */
+/* second-level dropdown (slide-out) */
 .dropdown-sub {
   position: relative;
 }
