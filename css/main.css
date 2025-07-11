@@ -135,7 +135,9 @@ li {
 }
 
 /* ───────── LINKS & BUTTONS ───────────────── */
-a {
+
+/* Button-style links only if class="btn" */
+a.btn {
   display: inline-block;
   color: #66aaff;
   font-weight: bold;
@@ -146,9 +148,25 @@ a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-a:hover {
+a.btn:hover {
   background: #66aaff;
   color: #1e1e1e;
+}
+
+/* Normal inline links (no button style) */
+a:not(.btn) {
+  color: #66aaff;
+  font-weight: normal;
+  text-decoration: underline;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+a:not(.btn):hover {
+  color: #aaccee;
+  text-decoration: underline;
 }
 
 /* ───────── RESPONSIVE IMAGES (NON-HEADSHOT) ───────── */
