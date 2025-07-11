@@ -45,6 +45,7 @@ body {
   position: relative;
 }
 
+/* Base styling for all nav links and spans */
 .nav-root a,
 .nav-root span {
   display: block;
@@ -55,8 +56,26 @@ body {
   cursor: pointer;
 }
 
+/* Hover effect for base nav links and spans */
 .nav-root a:hover,
 .nav-root span:hover {
+  background: #002244;
+}
+
+/* Dropdown button styling for .dropbtn and .subbtn */
+.dropbtn,
+.subbtn {
+  color: #ffffff;
+  padding: 14px 20px;
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hover effect for dropdown buttons */
+.dropbtn:hover,
+.subbtn:hover {
   background: #002244;
 }
 
@@ -79,6 +98,7 @@ body {
   white-space: nowrap;
 }
 
+/* Show primary dropdown on hover */
 .dropdown:hover > .dropdown-content {
   display: block;
 }
@@ -97,6 +117,7 @@ body {
   min-width: 180px;
 }
 
+/* Show second-level dropdown on hover */
 .dropdown-sub:hover > .dropdown-content {
   display: block;
 }
