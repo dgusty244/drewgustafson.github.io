@@ -7,7 +7,7 @@ title: Redesigning High Watermark Logic at WTW | Drew Gustafson
   <article class="project-article">
     <h1>Redesigning High Watermark Logic at WTW</h1>
 
-    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating over 20, possibly over 50, tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time.</p>
+    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating dozens of tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time.</p>
 
     <p>At the beginning of each run, the pipeline would set the high watermark to the current timestamp, then look back a fixed window, typically three hours, using that value in its filters. However, if a job failed, the watermark had already advanced by the next run and the data might be missed. To compensate, the team ran frequent manual and automated backfills, including a regular three-month backfill every Sunday.</p>
 
