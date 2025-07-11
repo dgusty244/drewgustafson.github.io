@@ -44,12 +44,4 @@ WHERE EXISTS (
 
     <p>I also introduced zone-specific high watermarks. Each table tracked its watermark independently in the bronze, silver, and gold zones of our lakehouse. For example, if a job succeeded in loading bronze but failed in silver, it wouldn't reprocess the entire dataset, just the delta from the previous zone's high watermark.</p>
 
-    <p>Since our external SQL warehouse, used for business reporting, only received the final gold output, I added a dedicated high watermark to track what had been merged there. This prevented duplicate inserts and guaranteed completeness across all zones.</p>
-
-    <h2>Results</h2>
-
-    <p>After implementing these changes, our pipeline runs became far more stable and predictable. Failed jobs could resume cleanly from the correct point. Backfills were no longer required as frequently. While occasional backfills remained a reality—often due to source-side issues—I focused on root cause elimination instead of just symptom recovery.</p>
-
-    <p>This project taught me that even systems that appear to be working may harbor hidden fragility. By questioning inherited assumptions and rethinking the high watermark strategy, I delivered reliability improvements without a full rewrite.</p>
-  </article>
-</div>
+    <p>Since our external SQL warehouse, used for business reporting, only received
