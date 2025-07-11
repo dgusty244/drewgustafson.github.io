@@ -7,9 +7,9 @@ title: Redesigning High Watermark Logic at WTW | Drew Gustafson
   <article class="project-article">
     <h1>Redesigning High Watermark Logic at WTW</h1>
 
-    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating over 20—possibly over 50—tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time.</p>
+    <p>When I joined WTW, I inherited an incremental data load framework responsible for populating over 20, possibly over 50, tables in an Azure-based data warehouse. These tables were grouped into what the team called high watermark groups, and their processing logic depended on a pipeline start time.</p>
 
-    <p>At the beginning of each run, the pipeline would set the high watermark to the current timestamp, then look back a fixed window—typically three hours—using that value in its filters. However, if a job failed, the watermark had already advanced by the next run, and the data might be missed. To compensate, the team ran frequent manual and automated backfills, including a regular three-month backfill every Sunday.</p>
+    <p>At the beginning of each run, the pipeline would set the high watermark to the current timestamp, then look back a fixed window, typically three hours, using that value in its filters. However, if a job failed, the watermark had already advanced by the next run and the data might be missed. To compensate, the team ran frequent manual and automated backfills, including a regular three-month backfill every Sunday.</p>
 
     <p>Additionally, the ETL timestamps in the source OLTP database were not always reliable. One particularly fragile pattern used was:</p>
 
@@ -35,16 +35,16 @@ WHERE EXISTS (
       <p style="font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Architecture comparison showing the transition from pipeline-based to data-driven watermarks</p>
     </div>
 
-    <p>Instead of using the pipeline's start time as the high watermark—which is unrelated to the data itself—I began storing the <strong>maximum value of the column actually used to filter the data</strong> (such as an <code>updated_at</code> timestamp). This ensured that the watermark was consistent with the data's own change history.</p>
+    <p>Instead of using the pipeline's start time as the high watermark, which is unrelated to the data itself, I began storing the <strong>maximum value of the column actually used to filter the data</strong> (such as an <code>updated_at</code> timestamp). This ensured that the watermark was consistent with the data's own change history.</p>
 
     <blockquote>
       <strong>Why this matters:</strong>  
       Using pipeline start time as a watermark risks skipping records if a job fails or runs late. Using the maximum value from the actual data ensures correctness, repeatability, and easier recovery from failure.
     </blockquote>
 
-    <p>I also introduced zone-specific high watermarks. Each table tracked its watermark independently in the bronze, silver, and gold zones of our lakehouse. For example, if a job succeeded in loading bronze but failed in silver, it wouldn't reprocess the entire dataset—just the delta from the previous zone's high watermark.</p>
+    <p>I also introduced zone-specific high watermarks. Each table tracked its watermark independently in the bronze, silver, and gold zones of our lakehouse. For example, if a job succeeded in loading bronze but failed in silver, it wouldn't reprocess the entire dataset, just the delta from the previous zone's high watermark.</p>
 
-    <p>Since our external SQL warehouse (used for business reporting) only received the final gold output, I added a dedicated high watermark to track what had been merged there. This prevented duplicate inserts and guaranteed completeness across all zones.</p>
+    <p>Since our external SQL warehouse, used for business reporting, only received the final gold output, I added a dedicated high watermark to track what had been merged there. This prevented duplicate inserts and guaranteed completeness across all zones.</p>
 
     <h2>Results</h2>
 
