@@ -54,6 +54,9 @@ body {
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
+  min-width: 180px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Hover effect for base nav links and spans */
@@ -71,6 +74,9 @@ body {
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
+  min-width: 180px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Hover effect for dropdown buttons */
@@ -96,6 +102,8 @@ body {
 .dropdown-content li a {
   padding: 10px 16px;
   white-space: nowrap;
+  min-width: 180px;
+  text-align: center;
 }
 
 /* Show primary dropdown on hover */
