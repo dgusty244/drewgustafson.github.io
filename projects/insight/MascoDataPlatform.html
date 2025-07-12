@@ -2,15 +2,26 @@
 layout: default
 title: Insight Consulting Project - Azure Data Platform POC for Masco Corporation | Drew Gustafson
 ---
-
 <div class="container">
   <h1>Insight Consulting - Azure Data Platform Proof of Concept for Masco Corporation</h1>
-
   <div class="section">
     <p>
       As the sole consultant on this greenfield engagement, I delivered an
       end-to-end Azure data platform proof of concept (POC) that showcased ingestion,
       transformation, modeling, and visualization capabilities for Masco Corporation.
+    </p>
+  </div>
+
+  <!-- Architecture Diagram -->
+  <div class="section">
+    <h2>Architecture Overview</h2>
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="{{ site.baseurl }}/images/azurePocDiagram.png" 
+           alt="Azure Data Platform Architecture Diagram" 
+           style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+    <p style="text-align: center; font-style: italic; color: #666; font-size: 0.9em;">
+      End-to-end Azure data platform architecture provisioned via Terraform IaC
     </p>
   </div>
 
@@ -24,7 +35,7 @@ title: Insight Consulting Project - Azure Data Platform POC for Masco Corporatio
     <ul>
       <li>Azure Data Factory</li>
       <li>Azure Databricks</li>
-      <li>Azure Storage Account</li>
+      <li>Azure Data Lake Storage (ADLS)</li>
       <li>Azure Key Vault</li>
     </ul>
     <p>
@@ -33,7 +44,6 @@ title: Insight Consulting Project - Azure Data Platform POC for Masco Corporatio
       manageability.
     </p>
   </div>
-
   <!-- Data Modeling -->
   <div class="section">
     <h2>Data Modeling from Raw CSVs</h2>
@@ -44,10 +54,9 @@ title: Insight Consulting Project - Azure Data Platform POC for Masco Corporatio
       I conducted exploratory analysis to determine the appropriate grain and to identify potential dimensions by selecting distinct values from key attributes—such as company name, store ID, and region—and validating with stakeholders which entities represented subsidiaries or store-level operations.
     </p>
     <p>
-      I also cleaned and standardized user-input columns like addresses, mapping variations (e.g., “123 Main St.” vs. “123 Main Street”) to consistent values. These assumptions were validated through multiple review sessions with the client to ensure alignment between business understanding and technical implementation.
+      I also cleaned and standardized user-input columns like addresses, mapping variations (e.g., "123 Main St." vs. "123 Main Street") to consistent values. These assumptions were validated through multiple review sessions with the client to ensure alignment between business understanding and technical implementation.
     </p>
   </div>
-
   <!-- External Data Integration -->
   <div class="section">
     <h2>Enhancements &amp; External Data Integration</h2>
@@ -58,7 +67,6 @@ title: Insight Consulting Project - Azure Data Platform POC for Masco Corporatio
       in downstream reports.
     </p>
   </div>
-
   <!-- Power BI Dashboard -->
   <div class="section">
     <h2>Power BI Demo Dashboard</h2>
