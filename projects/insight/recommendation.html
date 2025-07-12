@@ -13,9 +13,19 @@ title: Insight Consulting Project - Scalable Recommendation Engine for Semicondu
   </div>
 
   <div class="section">
+    <h2>Architecture Overview</h2>
+    <p>
+      The diagram below illustrates the end-to-end data architecture and workflow for the recommendation engine, showing how raw data sources are processed through ETL pipelines, transformed into normalized data structures, and fed into the machine learning model to generate actionable recommendations.
+    </p>
+    <div class="diagram-container" style="text-align: center; margin: 20px 0;">
+      <img src="{{ site.baseurl }}/images/recommendationDiagram.png" alt="Semiconductor Recommendation Engine Architecture" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+    </div>
+  </div>
+
+  <div class="section">
     <h2>Project Objective</h2>
     <p>
-      The core use case was to assist users configuring semiconductor products by suggesting compatible components based on a selected base component. A machine learning model used similarity metrics to evaluate potential pairings. For example, selecting a primary structural or logic component (the “base component”) would trigger recommendations for complementary parts—such as connectors, regulators, or passive elements required for assembly.
+      The core use case was to assist users configuring semiconductor products by suggesting compatible components based on a selected base component. A machine learning model used similarity metrics to evaluate potential pairings. For example, selecting a primary structural or logic component (the "base component") would trigger recommendations for complementary parts—such as connectors, regulators, or passive elements required for assembly.
     </p>
   </div>
 
@@ -33,7 +43,7 @@ title: Insight Consulting Project - Scalable Recommendation Engine for Semicondu
 
     <h3>Data Modeling &amp; Business Output</h3>
     <p>
-      I designed downstream tables to organize the model’s recommendations for business use. Using SQL window functions, I:
+      I designed downstream tables to organize the model's recommendations for business use. Using SQL window functions, I:
     </p>
     <ul>
       <li>Ranked top compatible parts for each base component by model-generated similarity score</li>
@@ -63,7 +73,7 @@ title: Insight Consulting Project - Scalable Recommendation Engine for Semicondu
   <div class="section">
     <h2>Outcome</h2>
     <p>
-      The solution enhanced the customer configuration experience on the manufacturer’s digital platform by enabling faster, more accurate builds. Technically, it laid the groundwork for a continuously improving system where user behavior contributed to strengthening recommendation accuracy. This project significantly deepened my understanding of applied machine learning pipelines and the translation of model output into scalable, business-driven data architecture.
+      The solution enhanced the customer configuration experience on the manufacturer's digital platform by enabling faster, more accurate builds. Technically, it laid the groundwork for a continuously improving system where user behavior contributed to strengthening recommendation accuracy. This project significantly deepened my understanding of applied machine learning pipelines and the translation of model output into scalable, business-driven data architecture.
     </p>
   </div>
 </div>
