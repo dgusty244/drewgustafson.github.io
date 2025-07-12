@@ -1,0 +1,69 @@
+---
+layout: default
+title: Insight Consulting Project - Scalable Recommendation Engine for Semiconductor Manufacturer | Drew Gustafson
+---
+
+<div class="container">
+  <h1>Insight Consulting - Scalable Recommendation Engine for Semiconductor Manufacturer</h1>
+
+  <div class="section">
+    <p>
+      As a data engineer on a long-term consulting engagement with a global semiconductor manufacturer, I contributed to developing a data platform supporting a recommendation engine designed to improve component compatibility. The initiative aimed to streamline product configuration by guiding users toward optimal part combinations based on historical usage patterns and enriched metadata.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Project Objective</h2>
+    <p>
+      The core use case was to assist users configuring semiconductor products by suggesting compatible components based on a selected base component. A machine learning model used similarity metrics to evaluate potential pairings. For example, selecting a primary structural or logic component (the “base component”) would trigger recommendations for complementary parts—such as connectors, regulators, or passive elements required for assembly.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>My Contributions</h2>
+    <h3>Foundational Data Pipelines</h3>
+    <p>
+      I developed ingestion and transformation pipelines to consolidate raw data from various internal sources. This included:
+    </p>
+    <ul>
+      <li>Master tables cataloging components with key attributes and hierarchical relationships</li>
+      <li>Historical configuration data informing the recommendation model</li>
+      <li>Deduplication and standardization of product metadata within a Delta Lake architecture on Azure Databricks</li>
+    </ul>
+
+    <h3>Data Modeling &amp; Business Output</h3>
+    <p>
+      I designed downstream tables to organize the model’s recommendations for business use. Using SQL window functions, I:
+    </p>
+    <ul>
+      <li>Ranked top compatible parts for each base component by model-generated similarity score</li>
+      <li>Translated technical similarity scores into user-friendly rankings to improve interpretability for sales and product teams</li>
+    </ul>
+
+    <h3>Iterative Feature Expansion</h3>
+    <p>
+      As the model evolved, we expanded its feature set to improve accuracy and context:
+    </p>
+    <ul>
+      <li><strong>Parametric Data Integration:</strong> Ingested specification data scraped from publicly available product catalogs, including key engineering attributes such as voltage tolerance, package type, and thermal characteristics</li>
+      <li><strong>Behavioral Feedback Loop:</strong> Integrated performance data tracking which recommendations led to successful configurations and conversions. This created a positive feedback mechanism where model outputs became inputs to further refine recommendations</li>
+    </ul>
+
+    <h3>Data Quality and Ownership</h3>
+    <p>
+      This engagement marked my first full ownership of an end-to-end ETL pipeline. Over time, I independently handled:
+    </p>
+    <ul>
+      <li>Adding new data sources to production pipelines</li>
+      <li>Performing regular data quality checks such as row counts, null tracking, and schema validation</li>
+      <li>Organizing raw model output into actionable datasets for dashboarding and business consumption</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Outcome</h2>
+    <p>
+      The solution enhanced the customer configuration experience on the manufacturer’s digital platform by enabling faster, more accurate builds. Technically, it laid the groundwork for a continuously improving system where user behavior contributed to strengthening recommendation accuracy. This project significantly deepened my understanding of applied machine learning pipelines and the translation of model output into scalable, business-driven data architecture.
+    </p>
+  </div>
+</div>
